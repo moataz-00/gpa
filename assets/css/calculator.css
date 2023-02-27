@@ -1,0 +1,24 @@
+
+/* 
+---------------------------------------------
+header
+--------------------------------------------- 
+*/
+
+.headline {
+    text-align: center;
+    margin: 0 0 15px;
+}
+.headline__title {
+    font-size: 24px;
+}
+.headline__text {
+    font-size: 13px;
+}
+
+
+
+
+
+
+
