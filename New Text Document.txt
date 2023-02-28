@@ -1,0 +1,186 @@
+#include <iostream>
+#include <iomanip>
+#include <conio.h>
+using namespace std;
+
+int main()
+{
+    cout << "Hello in GPA calculator" << endl;
+    cout<<endl<<"This calculator is made by MOHAMED AFIFI BELAL "<<endl;
+    int n,h,hsum=0,oldh,x;
+    float sum,g,m,gsum=0,gpa,oldgpa,t,cgpa;//cgpa is cummulative gpa
+    cout<<"to calculate your cumulative GPA enter 1 and 2 to calculate the GPA for this semester : ";
+    cin>>x;
+    if(x==1)
+    {
+    cout<<"Enter your last GPA : ";
+    cin>>oldgpa;
+    cout<<endl<<"Enter the number of hours you have passed :";
+    cin>>oldh;
+    t=oldgpa*oldh; //the numeratour of old gpa
+    cout<<endl<<"Enter The Number Of Subjects : ";
+    cin>>n;
+    while(n>0)
+    {
+
+
+        cout<<endl<<"enter the number of hours of the subject : ";
+        cin>>h;
+        cout<<endl<<"enter the degree of the subject : ";
+        cin>>g;
+        if(g>=93 && g<=100)
+        {
+            m=4.00;
+            sum=m*h;
+        }
+        else if(g>=89 && g<93)
+        {
+            m=3.70;
+            sum=m*h;
+        }
+         else if(g>=84 && g<89)
+        {
+            m=3.30;
+            sum=m*h;
+        }
+         else if(g>=80 && g<84)
+        {
+            m=3.00;
+            sum=m*h;
+        }
+         else if(g>=76 && g<80)
+        {
+            m=2.70;
+            sum=m*h;
+        }
+         else if(g>=73 && g<76)
+        {
+            m=2.30;
+            sum=m*h;
+        }
+         else if(g>=70 && g<73)
+        {
+            m=2.00;
+            sum=m*h;
+        }
+         else if(g>=67 && g<70)
+        {
+            m=1.70;
+            sum=m*h;
+        }
+         else if(g>=64 && g<67)
+        {
+            m=1.30;
+            sum=m*h;
+        }
+         else if(g>=60 && g<64)
+        {
+            m=1.00;
+            sum=m*h;
+        }
+        else
+        {
+            m=0.00;
+            sum=m*h;
+        }
+
+        gsum+=sum;// gsum is the numertour of mew gpa
+         hsum+=h;
+        cout<<endl;
+
+      n--;
+
+    }
+   gpa=(gsum)/(hsum);
+   cgpa=(gsum+t)/(hsum+oldh);
+   std::cout<<std::fixed;
+   std::cout<<std::setprecision(2);
+   cout<<"congratulations your GPA for this semester is : "<<gpa<<endl;
+   cout<<"congratulations your cumulative GPA is : "<<cgpa<<endl;
+    }
+    else if(x==2)
+    {
+         cout<<endl<<"Enter The Number Of Subjects : ";
+         cin>>n;
+         while(n>0)
+    {
+
+
+        cout<<endl<<"enter the number of hours of the subject : ";
+        cin>>h;
+        cout<<endl<<"enter the degree of the subject : ";
+        cin>>g;
+        if(g>=93 && g<=100)
+        {
+            m=4.00;
+            sum=m*h;
+        }
+        else if(g>=89 && g<93)
+        {
+            m=3.70;
+            sum=m*h;
+        }
+         else if(g>=84 && g<89)
+        {
+            m=3.30;
+            sum=m*h;
+        }
+         else if(g>=80 && g<84)
+        {
+            m=3.00;
+            sum=m*h;
+        }
+         else if(g>=76 && g<80)
+        {
+            m=2.70;
+            sum=m*h;
+        }
+         else if(g>=73 && g<76)
+        {
+            m=2.30;
+            sum=m*h;
+        }
+         else if(g>=70 && g<73)
+        {
+            m=2.00;
+            sum=m*h;
+        }
+         else if(g>=67 && g<70)
+        {
+            m=1.70;
+            sum=m*h;
+        }
+         else if(g>=64 && g<67)
+        {
+            m=1.30;
+            sum=m*h;
+        }
+         else if(g>=60 && g<64)
+        {
+            m=1.00;
+            sum=m*h;
+        }
+        else
+        {
+            m=0.00;
+            sum=m*h;
+        }
+
+        gsum+=sum;// gsum is the numertour of mew gpa
+         hsum+=h;
+        cout<<endl;
+
+      n--;
+
+    }
+   gpa=(gsum)/(hsum);
+   std::cout<<std::fixed;
+   std::cout<<std::setprecision(2);
+   cout<<"congratulations your GPA for this semester is : "<<gpa<<endl;
+    }
+
+
+  else
+    cout<<"sorry you enter a wrong number"<<endl;
+    return 0;
+}
