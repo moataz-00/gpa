@@ -1,40 +1,44 @@
 var row =
-  "<tr>  data-scroll-reveal='enter right move 30px over 0.6s after 0.4s'><td> <input id='inputTask' type='text' class='form-control' placeholder='course'></td>  <td><input  type='text' class='inputTask2 form-control' placeholder='grade'></td>    <td><input id='inputTask' type='text' class='form-control' placeholder='credits'></td> <td><i class='bx bx-edit-alt' style='color:#44a455'  ></i></td> <td><i class='remove bx bxs-trash-alt' style='color:#ff0000'  ></i></td> </tr>";
+  "<tr><td> <input  type='text' class='inputTask1 form-control' placeholder='course'></td>  <td><input  type='text' class='inputTask2 form-control' placeholder='grade'></td>    <td><input  type='text' class='inputTask3 form-control' placeholder='credits'></td>  <td ><i  class='remove bx bxs-trash-alt' style='color:#ff0000;font-size: x-large;'  ></i></td> </tr>";
+
+  let inputTask=document.querySelectorAll("input");
+  let calculate = document.querySelector("button");
+  let coursename = document.getElementsByClassName('inputTask1');
+  let hourse=document.getElementsByClassName('inputTask3');
+  let grade=document.getElementsByClassName('inputTask2');
+  let result = document.getElementById("result");
+  
 
 $(document).ready(function () {
   $(".add_row").click(function () {
-    $(".t_0").append(row).fadeIn(3000);
+    $(".t_0").append(row)
+    
   });
 
   $(".add_r").click(function () {
-    $(".t_1").append(row).fadeIn(3000);
+    $(".t_1").append(row);
   });
 
   $(document).on("click", ".remove", function () {
     $(this).parents("tr").remove();
   });
 });
-let inputTask=document.querySelectorAll("input")
-let calculate = document.querySelector("button");
-let coursename = document.getElementsByClassName('inputTask1');
-let hourse=document.getElementsByClassName('inputTask3');
-let grade=document.getElementsByClassName('inputTask2');
-let result = document.getElementById("result");
 
+
+
+
+
+console.log(coursename);
 console.log(grade);
 console.log(hourse);
 console.log(result);
 console.log(inputTask);
 
-calculate.onclick = function () {
-  // h=inputs[1].value;
-  // color=inputs[2].value;
-  // m=inputs[3].value;
 
-   
-  let /*number of subjects*/ n,
-  /*number of hours*/ h,
-  hsum = 0;
+
+
+
+calculate.onclick = function () {
 let sum =0.0,
   /*degree*/ 
   m,
@@ -92,11 +96,16 @@ gsum += sum; // gsum is the numertour of mew gpa
 
 
 gpa=gsum/ghour;
-let x=  gpa.toPrecision(2);
+if(ghour==0 && gsum==0){
+  gpa="ENTER  YOUR  GRADES"
+}else{
+   gpa=gpa.toPrecision(3);
+}
 
-result.innerHTML=x;
+
+result.innerHTML=gpa;
 
 };
-console.log(calculate);
+
 
 
