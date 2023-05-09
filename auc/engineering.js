@@ -1,6 +1,7 @@
 var row =
   "<tr><td> <input  type='text' class='inputTask1 form-control' placeholder='course'></td>  <td><input  type='text' class='inputTask2 form-control' placeholder='grade'></td>    <td><input  type='text' class='inputTask3 form-control' placeholder='credits'></td>  <td ><i  class='remove bx bxs-trash-alt' style='color:#ff0000;font-size: x-large;'  ></i></td> </tr>";
 
+
   let inputTask=document.querySelectorAll("input");
   let calculate = document.querySelector("button");
   let coursename = document.getElementsByClassName('inputTask1');
@@ -8,19 +9,35 @@ var row =
   let grade=document.getElementsByClassName('inputTask2');
   let result = document.getElementById("result");
   
+  
 
 $(document).ready(function () {
   $(".add_row").click(function () {
     $(".t_0").append(row)
+    $(".t_0 #alert_0").hide();
+
     
   });
 
+  
+
   $(".add_r").click(function () {
     $(".t_1").append(row);
+    $(".t_1 #alert_1").hide();
+    
   });
 
   $(document).on("click", ".remove", function () {
     $(this).parents("tr").remove();
+
+    if($(".t_0 .inputTask2").length==0){
+      $("#alert_0").show();
+    }
+    
+    if($(".t_1 .inputTask2").length==0){
+      $("#alert_1").show();
+    }
+      
   });
 });
 
@@ -35,6 +52,10 @@ console.log(result);
 console.log(inputTask);
 
 
+
+// if(grade.length==0){
+//   $("#alert").hide();
+// }
 
 
 

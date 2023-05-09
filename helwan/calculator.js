@@ -9,20 +9,35 @@ var row =
   let result = document.getElementById("result");
   
 
-$(document).ready(function () {
-  $(".add_row").click(function () {
-    $(".t_0").append(row)
+  $(document).ready(function () {
+    $(".add_row").click(function () {
+      $(".t_0").append(row)
+      $(".t_0 #alert_0").hide();
+  
+      
+    });
+  
     
+  
+    $(".add_r").click(function () {
+      $(".t_1").append(row);
+      $(".t_1 #alert_1").hide();
+      
+    });
+  
+    $(document).on("click", ".remove", function () {
+      $(this).parents("tr").remove();
+  
+      if($(".t_0 .inputTask2").length==0){
+        $("#alert_0").show();
+      }
+      
+      if($(".t_1 .inputTask2").length==0){
+        $("#alert_1").show();
+      }
+        
+    });
   });
-
-  $(".add_r").click(function () {
-    $(".t_1").append(row);
-  });
-
-  $(document).on("click", ".remove", function () {
-    $(this).parents("tr").remove();
-  });
-});
 
 
 
